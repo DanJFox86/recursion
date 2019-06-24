@@ -29,7 +29,6 @@ var stringifyJSON = function(obj) {
 
 	var stringify = function(currObj) {
 	  if(Array.isArray(currObj)) {
-	    //console.log("This is an array");
 	    output += "[";
 	    for(var i = 0; i < currObj.length; i++) {
 	      if(!Array.isArray(currObj[i]) && typeof currObj[i] !== 'object') {
@@ -43,10 +42,8 @@ var stringifyJSON = function(obj) {
 	    }
 	    output += "]";
 	  } else if (currObj && typeof currObj === 'object') {
-	    //console.log("We have an object");
 	    output += "{";
 	    var keys = Object.keys(currObj);
-	    //console.log(keys);
 	    for (var i = 0; i < keys.length; i++) {
 	      console.log(typeof currObj[keys[i]] === 'undefined');
 	      if(typeof currObj[keys[i]] !== 'undefined' && typeof currObj[keys[i]] !== 'function') {
